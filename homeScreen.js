@@ -25,7 +25,9 @@ const HomeScreen = (props) => {
           <Text style={styles.navigationTitle}>短片</Text>
         </View>
       </View>
-      <VideoList />
+      <View style={styles.subScreen}>
+        <NewsList />
+      </View>
     </View>
   );
 };
@@ -34,13 +36,14 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#318b4d",
     alignItems: "center",
+    height: "100%",
   },
   header: {
     position: "absolute",
-    top: 50,
+    top: 25,
+    height: 100,
   },
   headerTop: {
     display: "flex",
@@ -49,8 +52,7 @@ const styles = StyleSheet.create({
   headerBottom: {
     display: "flex",
     flexDirection: "row",
-    marginTop: 25,
-    marginBottom: 5,
+    marginTop: 15,
   },
   title: {
     color: "white",
@@ -70,4 +72,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginHorizontal: 30,
   },
+  subScreen: {
+    position: "relative",
+    top: 95,
+    width: "100%",
+    height: 552,
+    backgroundColor: "white",
+  }
 });

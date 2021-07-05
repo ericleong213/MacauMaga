@@ -6,14 +6,13 @@ import { FontAwesome } from "@expo/vector-icons";
 
 const NewsList = () => {
   const [sample] = useState([
-    "第1期",
-    "第2期",
-    "第3期",
-    "第4期",
-    "第5期",
-    "第6期",
-    "第7期",
-    "第8期",
+    {description: "今天天氣很差, 但又很好。"},
+    {description: "這apps我弄了幾個月都未弄好"},
+    {description: "救命，好攰"},
+    {description: "拿拿聲整埋個過場"},
+    {description: "整埋api攞data"},
+    {description: "整埋server backend RESTful APi"},
+    {description: "upload埋去google store or apps store就叫禮成, 頂你!"},
   ]);
   return (
     <View style={styles.container}>
@@ -35,8 +34,8 @@ const NewsList = () => {
         </View>
         <FlatList
           data={sample}
-          keyExtractor={(item) => item.toString()}
-          renderItem={({ item }) => <News />}
+          keyExtractor={(item) => item.description}
+          renderItem={({ item }) => <News description={item.description}/>}
         />
       </View>
     </View>
@@ -48,13 +47,11 @@ export default NewsList;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    position: "absolute",
-    top: 150,
     width: "100%",
   },
   topImage: {
     width: 375,
-    height: 130,
+    height: 110,
   },
   topTitle: {
     fontSize: 20,
@@ -66,9 +63,10 @@ const styles = StyleSheet.create({
   },
   topTitleContainer: {
     margin: 20,
+    marginBottom: 5,
     display: "flex",
     flexDirection: "row",
-    paddingBottom: 20,
+    paddingBottom: 10,
     borderBottomColor: "#cbced4",
     borderBottomWidth: 2,
   },
