@@ -37,17 +37,15 @@ export default Magazine;
 
 const styles = StyleSheet.create({
   Magazine: {
-    width: 140,
+    width: 150,
     height: 230,
-    margin: 10,
-    borderWidth: 2,
-    borderColor: "white",
+    marginVertical: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   magaImg: {
-    width: 130,
-    height: 190,
+    width: 148,
+    height: 200,
   },
   tileText: {
     color: "grey",
@@ -57,10 +55,15 @@ const styles = StyleSheet.create({
   },
   tileButtonContainer: {
     position: "absolute",
-    bottom: 30,
+    bottom: 20,
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     marginBottom: 5,
+    backgroundColor: "#318b4d",
+    width: 148,
+    height: 35
   },
   iconBook: {
     color: "white",

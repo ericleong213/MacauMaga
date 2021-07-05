@@ -29,10 +29,7 @@ export default MagazineList;
 
 const styles = StyleSheet.create({
   MagazineListContainer: {
-    backgroundColor: "white",
-    position: "absolute",
-    top: 150,
-    paddingHorizontal: 20,
-    width: "100%",
+    // position: "absolute",
+    padding: 15,
   },
 });
