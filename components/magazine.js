@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: "center",
     alignItems: "center",
+    marginHorizontal: 10,
   },
   magaImg: {
     width: 148,

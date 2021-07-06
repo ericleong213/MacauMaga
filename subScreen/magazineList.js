@@ -19,6 +19,7 @@ const MagazineList = () => {
       <FlatList
         data={sample}
         keyExtractor={(item) => item.toString()}
+        numColumns={2}
         renderItem={({ item }) => <Magazine title={item} />}
       />
     </View>
@@ -31,5 +32,7 @@ const styles = StyleSheet.create({
   MagazineListContainer: {
     // position: "absolute",
     padding: 15,
+    backgroundColor: "grey",
+    // flexWrap: "wrap",
   },
 });
