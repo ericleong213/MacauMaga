@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Foundation, AntDesign } from "@expo/vector-icons";
-import VideoList from './subScreen/videoList'
-import NewsList from './subScreen/newsList';
-import MagazineList from "./subScreen/magazineList";
 
-const HomeScreen = (props) => {
+const title = "炫目扯鈴 天馬行空任你2扯"
+
+const VideoViewPage = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -13,25 +12,27 @@ const HomeScreen = (props) => {
           <TouchableOpacity>
             <Foundation style={styles.iconList} name="list" />
           </TouchableOpacity>
-          <Text style={styles.title}>澳門雜誌</Text>
           <TouchableOpacity>
             <AntDesign style={styles.iconSetting} name="setting" />
           </TouchableOpacity>
         </View>
-        <View style={styles.headerBottom}>
-          <Text style={styles.navigationTitle}>快訊</Text>
-          <Text style={styles.navigationTitle}>雜誌</Text>
-          <Text style={styles.navigationTitle}>短片</Text>
-        </View>
       </View>
       <View style={styles.subScreen}>
-        <VideoList />
+        <View style={styles.videoTitleContainer}>
+          <Text style={styles.videoTitle}>{title}</Text>
+        </View>
+        <View style={styles.videoTitleContainer2}>
+          <Text style={styles.videoTitle2}>{title}</Text>
+        </View>
+        <View style={styles.videoClipContainer}>
+          <Text style={styles.videoClip}>{title}</Text>
+        </View>
       </View>
     </View>
   );
 };
 
-export default HomeScreen;
+export default VideoViewPage;
 
 const styles = StyleSheet.create({
   container: {
@@ -41,41 +42,53 @@ const styles = StyleSheet.create({
   },
   header: {
     position: "absolute",
-    top: 25,
-    height: 100,
+    top: 45,
+    left: 25,
+    width: 320,
   },
   headerTop: {
     display: "flex",
     flexDirection: "row",
   },
-  headerBottom: {
-    display: "flex",
-    flexDirection: "row",
-    marginTop: 15,
-  },
-  title: {
-    color: "white",
-    fontSize: 25,
-    marginHorizontal: 90,
-  },
   iconList: {
     color: "white",
     fontSize: 25,
+    marginRight: 280,
   },
   iconSetting: {
     color: "white",
     fontSize: 25,
-  },
-  navigationTitle: {
-    color: "white",
-    fontSize: 20,
-    marginHorizontal: 30,
   },
   subScreen: {
     position: "relative",
     top: 95,
     width: "100%",
     height: 552,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     backgroundColor: "white",
+  },
+  videoTitleContainer:{
+    borderBottomWidth: 2,
+    borderBottomColor: "rgb(207,207,207)",
+  },
+  videoTitle: {
+    fontSize: 25,
+    fontWeight: "500",
+    paddingBottom: 10,
+  },
+  videoTitleContainer2:{
+    marginTop: 10,
+  },
+  videoTitle2: {
+    fontSize: 18,
+    color: "rgb(207,207,207)",
+  },
+  videoClipContainer:{
+    marginTop: 20,
+    height: 220,
+    backgroundColor: "grey",
+  },
+  videoClip: {
   }
 });

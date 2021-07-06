@@ -6,8 +6,8 @@ import { FontAwesome } from "@expo/vector-icons";
 
 const VideoList = () => {
   const [sample] = useState([
-    {title: "第1期"},
-    {title: "第2期"},
+    {title: "炫目扯鈴 天馬行空任你扯"},
+    {title: "舞龍躍登小城非遺 矯健身姿團結人心"},
     {title: "第3期"},
     {title: "第4期"},
     {title: "第5期"},
@@ -29,7 +29,6 @@ export default VideoList;
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: "white",
-    top: 150,
+    padding: 20,
   },
 });
