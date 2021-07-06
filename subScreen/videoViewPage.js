@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Foundation, AntDesign } from "@expo/vector-icons";
+import VideoClip from "../FeatureSample/VideoClip";
 
-const title = "炫目扯鈴 天馬行空任你2扯"
+const title = "炫目扯鈴 天馬行空任你2扯";
+const titleDate = "2021/06/30";
 
 const VideoViewPage = (props) => {
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({});
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -22,11 +27,15 @@ const VideoViewPage = (props) => {
           <Text style={styles.videoTitle}>{title}</Text>
         </View>
         <View style={styles.videoTitleContainer2}>
-          <Text style={styles.videoTitle2}>{title}</Text>
+          <Text style={styles.videoTitle2}>
+            {title}
+            {titleDate}
+          </Text>
         </View>
-        <View style={styles.videoClipContainer}>
+        <VideoClip />
+        {/* <View style={styles.videoClipContainer}>
           <Text style={styles.videoClip}>{title}</Text>
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -68,7 +77,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     backgroundColor: "white",
   },
-  videoTitleContainer:{
+  videoTitleContainer: {
     borderBottomWidth: 2,
     borderBottomColor: "rgb(207,207,207)",
   },
@@ -77,18 +86,17 @@ const styles = StyleSheet.create({
     fontWeight: "500",
     paddingBottom: 10,
   },
-  videoTitleContainer2:{
+  videoTitleContainer2: {
     marginTop: 10,
   },
   videoTitle2: {
     fontSize: 18,
     color: "rgb(207,207,207)",
   },
-  videoClipContainer:{
+  videoClipContainer: {
     marginTop: 20,
     height: 220,
     backgroundColor: "grey",
   },
-  videoClip: {
-  }
+  videoClip: {},
 });

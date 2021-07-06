@@ -1,10 +1,7 @@
-import React from 'react';
-import HomeScreen from "./homeScreen"
-import VideoViewPage from "./subScreen/videoViewPage";
-
+import React from "react";
+import HomeScreen from "./homeScreen";
+import SelectBlogList from "./subScreen/selectBlogList";
 
 export default function App() {
-  return (
-      <VideoViewPage/>
-  );
+  return <SelectBlogList />;
 }

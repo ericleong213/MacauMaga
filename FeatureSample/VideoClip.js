@@ -19,14 +19,14 @@ export default function VideoClip() {
         onPlaybackStatusUpdate={(status) => setStatus(() => status)}
       />
       <View style={styles.buttons}>
-        <Button
+        {/* <Button
           title={status.isPlaying ? "Pause" : "Play"}
           onPress={() =>
             status.isPlaying
               ? video.current.pauseAsync()
               : video.current.playAsync()
           }
-        />
+        /> */}
       </View>
     </View>
   );
@@ -34,8 +34,7 @@ export default function VideoClip() {
 
 const styles = StyleSheet.create({
   container1: {
-    position: "absolute",
-    top: 150,
+    marginTop: 30,
     justifyContent: "center",
     backgroundColor: "#ecf0f1",
   },
