@@ -6,6 +6,11 @@ import NewsList from './subScreen/newsList';
 import MagazineList from "./subScreen/magazineList";
 
 const HomeScreen = (props) => {
+  
+  const[selected, setSelected] = useState("news");
+
+
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -19,13 +24,21 @@ const HomeScreen = (props) => {
           </TouchableOpacity>
         </View>
         <View style={styles.headerBottom}>
-          <Text style={styles.navigationTitle}>快訊</Text>
-          <Text style={styles.navigationTitle}>雜誌</Text>
-          <Text style={styles.navigationTitle}>短片</Text>
+          <TouchableOpacity onPress={() => setSelected("news")} style={[styles.navigationTitleContainer, selected == "news" && styles.ActiveNavigationTitleContainer]}>
+            <Text style={[styles.navigationTitle, selected == "news" && styles.ActiveNavigationTitle]} >快訊</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setSelected("magazine")} style={[styles.navigationTitleContainer, selected == "magazine" && styles.ActiveNavigationTitleContainer]}>
+          <Text style={[styles.navigationTitle, selected == "magazine" && styles.ActiveNavigationTitle]} >雜誌</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setSelected("video")} style={[styles.navigationTitleContainer, selected == "video" && styles.ActiveNavigationTitleContainer]}>
+          <Text style={[styles.navigationTitle, selected == "video" && styles.ActiveNavigationTitle]} >短片</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.subScreen}>
-        <VideoList />
+        {selected == "news" && <NewsList/>}
+        {selected == "magazine" && <MagazineList/>}
+        {selected == "video" && <VideoList/>}
       </View>
     </View>
   );
@@ -67,9 +80,22 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   navigationTitle: {
+    color: "#9e9796",
+    fontSize: 20,
+    marginHorizontal: 30,
+  },
+  ActiveNavigationTitle: {
     color: "white",
     fontSize: 20,
     marginHorizontal: 30,
+  },
+  navigationTitleContainer: {
+    color: "#9e9796",
+  },
+  ActiveNavigationTitleContainer: {
+    borderBottomWidth: 2,
+    borderBottomColor: "white",
+    paddingBottom: 5,
   },
   subScreen: {
     position: "relative",
