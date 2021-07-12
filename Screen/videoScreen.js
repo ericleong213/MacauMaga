@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Foundation, AntDesign } from "@expo/vector-icons";
-import MagazineList from "../subScreen/magazineList";
+import VideoList from "../subScreen/videoList";
 
-const MagazineScreen = (props) => {
+const VideoScreen = (props) => {
   const [selected, setSelected] = useState("news");
 
   return (
@@ -25,25 +25,25 @@ const MagazineScreen = (props) => {
           >
             <Text style={styles.navigationTitle}>快訊</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.ActiveNavigationTitleContainer}>
-            <Text style={styles.ActiveNavigationTitle}>雜誌</Text>
-          </TouchableOpacity>
           <TouchableOpacity
-            onPress={props.setVideoScreen}
+            onPress={props.setMagazineScreen}
             style={styles.navigationTitleContainer}
           >
-            <Text style={styles.navigationTitle}>短片</Text>
+            <Text style={styles.navigationTitle}>雜誌</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.ActiveNavigationTitleContainer}>
+            <Text style={styles.ActiveNavigationTitle}>短片</Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.subScreen}>
-        <MagazineList />
+        <VideoList />
       </View>
     </View>
   );
 };
 
-export default MagazineScreen;
+export default VideoScreen;
 
 const styles = StyleSheet.create({
   container: {

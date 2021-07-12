@@ -19,20 +19,17 @@ const NewsScreen = (props) => {
           </TouchableOpacity>
         </View>
         <View style={styles.headerBottom}>
-          <TouchableOpacity
-            onPress={() => setSelected("news")}
-            style={styles.ActiveNavigationTitleContainer}
-          >
+          <TouchableOpacity style={styles.ActiveNavigationTitleContainer}>
             <Text style={styles.ActiveNavigationTitle}>快訊</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={props.setScreen}
+            onPress={props.setMagazineScreen}
             style={styles.navigationTitleContainer}
           >
             <Text style={styles.navigationTitle}>雜誌</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setSelected("video")}
+            onPress={props.setVideoScreen}
             style={styles.navigationTitleContainer}
           >
             <Text style={styles.navigationTitle}>短片</Text>
