@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Foundation, AntDesign } from "@expo/vector-icons";
-import VideoList from "./subScreen/videoList";
-import NewsList from "./subScreen/newsList";
-import MagazineList from "./subScreen/magazineList";
-import SideBarSample from "./subScreen/sideBarSample";
+import NewsList from "../subScreen/newsList";
 
-const HomeScreen = (props) => {
+const NewsScreen = (props) => {
   const [selected, setSelected] = useState("news");
 
   return (
@@ -24,65 +21,32 @@ const HomeScreen = (props) => {
         <View style={styles.headerBottom}>
           <TouchableOpacity
             onPress={() => setSelected("news")}
-            style={[
-              styles.navigationTitleContainer,
-              selected == "news" && styles.ActiveNavigationTitleContainer,
-            ]}
+            style={styles.ActiveNavigationTitleContainer}
           >
-            <Text
-              style={[
-                styles.navigationTitle,
-                selected == "news" && styles.ActiveNavigationTitle,
-              ]}
-            >
-              快訊
-            </Text>
+            <Text style={styles.ActiveNavigationTitle}>快訊</Text>
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => setSelected("magazine")}
-            style={[
-              styles.navigationTitleContainer,
-              selected == "magazine" && styles.ActiveNavigationTitleContainer,
-            ]}
+            onPress={props.setScreen}
+            style={styles.navigationTitleContainer}
           >
-            <Text
-              style={[
-                styles.navigationTitle,
-                selected == "magazine" && styles.ActiveNavigationTitle,
-              ]}
-            >
-              雜誌
-            </Text>
+            <Text style={styles.navigationTitle}>雜誌</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => setSelected("video")}
-            style={[
-              styles.navigationTitleContainer,
-              selected == "video" && styles.ActiveNavigationTitleContainer,
-            ]}
+            style={styles.navigationTitleContainer}
           >
-            <Text
-              style={[
-                styles.navigationTitle,
-                selected == "video" && styles.ActiveNavigationTitle,
-              ]}
-            >
-              短片
-            </Text>
+            <Text style={styles.navigationTitle}>短片</Text>
           </TouchableOpacity>
         </View>
       </View>
       <View style={styles.subScreen}>
-        {selected == "news" && <NewsList />}
-        {selected == "magazine" && <MagazineList />}
-        {selected == "video" && <VideoList />}
-        {selected == "sidebar" && <SideBarSample />}
+        <NewsList />
       </View>
     </View>
   );
 };
 
-export default HomeScreen;
+export default NewsScreen;
 
 const styles = StyleSheet.create({
   container: {
