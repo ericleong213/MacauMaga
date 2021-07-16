@@ -10,7 +10,7 @@ const NewsDetailScreen = (props) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTop}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={props.backToList}>
             <SimpleLineIcons style={styles.iconArrow} name="arrow-left" />
           </TouchableOpacity>
           <Text style={styles.title}>快訊</Text>

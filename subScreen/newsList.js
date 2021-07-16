@@ -4,16 +4,20 @@ import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 import News from '../components/news';
 import { FontAwesome } from "@expo/vector-icons";
 
-const NewsList = () => {
+const NewsList = (props) => {
   const [sample] = useState([
-    {description: "今天天氣很差, 但又很好。"},
-    {description: "這apps我弄了幾個月都未弄好"},
-    {description: "救命，好攰"},
-    {description: "拿拿聲整埋個過場"},
-    {description: "整埋api攞data"},
-    {description: "整埋server backend RESTful APi"},
-    {description: "upload埋去google store or apps store就叫禮成, 頂你!"},
+    {id:1, info: {title: "今天天氣很差, 但又很好", date:"2021/06/01", imgUrl:"https://picsum.photos/200/200", context: "Sample Text 1 Sample Text 1"}},
+    {id:2, info: {title: "這apps我弄了幾個月都未弄好", date:"2021/06/05", imgUrl:"https://picsum.photos/200/200", context: "Sample 2 2 2 2 2  2222"}},
+    {id:3, info: {title: "救命，好攰", date:"2021/06/10", imgUrl:"https://picsum.photos/200/200", context: "3 text sample 3 sample text 3"}},
+    {id:4, info: {title: "拿拿聲整埋個過場", date:"2021/06/20", imgUrl:"https://picsum.photos/200/200", context: "no 4 sample la"}},
+    {id:5, info: {title: "整埋server backend RESTful APi", date:"2021/06/30", imgUrl:"https://picsum.photos/200/200", context: "gimme Five , the Fifth One"}},
+    {id:6, info: {title: "upload埋去google store or apps store就叫禮成, 頂你!", date:"2021/07/30", imgUrl:"https://picsum.photos/200/200", context: "six xis xissix is kxisi xi "}},
   ]);
+  const [selectedNews, setSelectedNews] = useState();
+  const handleSelect = (data) => {
+    setSelectedNews(data)
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -32,11 +36,13 @@ const NewsList = () => {
           <FontAwesome name="download" style={styles.iconDownload} />
           <Text style={styles.headerTxt}>快訊</Text>
         </View>
-        <FlatList
-          data={sample}
-          keyExtractor={(item) => item.description}
-          renderItem={({ item }) => <News description={item.description}/>}
-        />
+        <View style={styles.newsList}>
+          <FlatList
+            data={sample}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => <News info={item.info} onPress={props.toDetail}/>}
+          />
+        </View>
       </View>
     </View>
   );
@@ -78,4 +84,6 @@ const styles = StyleSheet.create({
     color: "grey",
     marginLeft: 10,
   },
+  newsList:{
+  }
 });

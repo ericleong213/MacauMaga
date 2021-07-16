@@ -4,20 +4,22 @@ import {
   Text,
   StyleSheet,
   Image,
-  TouchableOpacity,
+  TouchableHighlight,
 } from "react-native";
 
 const News = (props) => {
   return (
-    <View style={styles.newsTile}>
-      <Image
-        style={styles.newsImg}
-        source={{
-          uri: "https://picsum.photos/200/200",
-        }}
-      />
-      <Text style={styles.newsText}>2021/06/10{"\n\n"}{props.description}</Text>
-    </View>
+    <TouchableHighlight style={styles.newsTile} onPress={props.onPress}>
+      <View style={styles.newsTile}>
+        <Image
+          style={styles.newsImg}
+          source={{
+            uri: props.info.imgUrl,
+          }}
+        />
+        <Text style={styles.newsText}>{props.info.date}{"\n\n"}{props.info.title}</Text>
+      </View>
+    </TouchableHighlight>
   );
 };
 
@@ -25,16 +27,18 @@ export default News;
 
 const styles = StyleSheet.create({
   newsTile: {
-    width: 350,
-    height: 130,
+    flex: 1,
+    width: 320,
+    height: 110,
     margin: 5,
     display: "flex",
     flexDirection: "row",
     alignItems: "flex-start",
+    backgroundColor: "#DDDDDD",
   },
   newsImg: {
-    width: 130,
-    height: 120,
+    width: 110,
+    height: 100,
 
   },
   newsText: {
@@ -42,6 +46,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 5,
     marginLeft: 20,
-
   },
 });

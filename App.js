@@ -1,7 +1,7 @@
 import React from "react";
-import HomeScreen from "./homeScreen";
-import SelectBlogList from "./subScreen/selectBlogList";
+import SelectScreen from "./selectScreen";
+import NewsDetailScreen from "./Screen/newsDetailScreen";
 
 export default function App() {
-  return <SelectBlogList />;
+  return <SelectScreen />;
 }
