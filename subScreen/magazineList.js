@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 
 import Magazine from "../components/magazine";
 
-const MagazineList = () => {
+const MagazineList = (props) => {
   const [sample] = useState([
     "第1期",
     "第2期",
@@ -17,10 +17,10 @@ const MagazineList = () => {
   return (
     <View style={styles.MagazineListContainer}>
       <FlatList
-        data={sample}
-        keyExtractor={(item) => item.toString()}
+        data={props.magazineList}
+        keyExtractor={(item) => item.id.toString()}
         numColumns={2}
-        renderItem={({ item }) => <Magazine title={item} />}
+        renderItem={({ item }) => <Magazine info={item} />}
       />
     </View>
   );
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
   MagazineListContainer: {
     // position: "absolute",
     padding: 15,
-    backgroundColor: "grey",
     // flexWrap: "wrap",
   },
 });

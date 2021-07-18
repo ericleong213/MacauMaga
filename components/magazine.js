@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
-import {
-  Feather,
-  FontAwesome,
-} from "@expo/vector-icons";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Feather, FontAwesome } from "@expo/vector-icons";
 
 const Magazine = (props) => {
   return (
@@ -20,7 +11,7 @@ const Magazine = (props) => {
           uri: "https://picsum.photos/200/200",
         }}
       />
-      <Text style={styles.tileText}>{props.title}</Text>
+      <Text style={styles.tileText}>{props.info.title}</Text>
       <View style={styles.tileButtonContainer}>
         <TouchableOpacity onPress={() => console.log("once")}>
           <Feather name="book-open" style={styles.iconBook} />
@@ -64,7 +55,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     backgroundColor: "#318b4d",
     width: 148,
-    height: 35
+    height: 35,
   },
   iconBook: {
     color: "white",
