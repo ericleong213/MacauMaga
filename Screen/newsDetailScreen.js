@@ -4,8 +4,6 @@ import { SimpleLineIcons, MaterialIcons } from "@expo/vector-icons";
 import NewsDetail from "../components/newsDetail";
 
 const NewsDetailScreen = (props) => {
-  const [selected, setSelected] = useState("news");
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -20,7 +18,7 @@ const NewsDetailScreen = (props) => {
         </View>
       </View>
       <View style={styles.subScreen}>
-        <NewsDetail />
+        <NewsDetail currentNews={props.currentNews} />
       </View>
     </View>
   );

@@ -5,7 +5,7 @@ import NewsList from "../subScreen/newsList";
 
 const NewsScreenList = (props) => {
   const [selected, setSelected] = useState("news");
-  const newsList = {}
+  const newsList = {};
 
   return (
     <View style={styles.container}>
@@ -38,7 +38,7 @@ const NewsScreenList = (props) => {
         </View>
       </View>
       <View style={styles.subScreen}>
-        <NewsList toDetail={props.toDetail}/>
+        <NewsList toDetail={props.toDetail} newsList={props.newsList} />
       </View>
     </View>
   );

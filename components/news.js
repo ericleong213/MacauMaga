@@ -9,7 +9,10 @@ import {
 
 const News = (props) => {
   return (
-    <TouchableHighlight style={styles.newsTile} onPress={props.onPress}>
+    <TouchableHighlight
+      style={styles.newsTile}
+      onPress={() => props.onPress(props.info)}
+    >
       <View style={styles.newsTile}>
         <Image
           style={styles.newsImg}
@@ -17,7 +20,11 @@ const News = (props) => {
             uri: props.info.imgUrl,
           }}
         />
-        <Text style={styles.newsText}>{props.info.date}{"\n\n"}{props.info.title}</Text>
+        <Text style={styles.newsText}>
+          {props.info.date}
+          {"\n\n"}
+          {props.info.title}
+        </Text>
       </View>
     </TouchableHighlight>
   );
@@ -39,7 +46,6 @@ const styles = StyleSheet.create({
   newsImg: {
     width: 110,
     height: 100,
-
   },
   newsText: {
     color: "grey",

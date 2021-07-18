@@ -5,13 +5,12 @@ const NewsDetail = (props) => {
   return (
     <View>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleTxt}>
-          海關辦比賽推廣保護知識產權7月起徵集作品
-        </Text>
+        <Text style={styles.titleTxt}>{props.currentNews.title}</Text>
       </View>
       <View style={styles.subTitleContainer}>
         <Text style={styles.subTitleTxt}>
-          海關辦比賽推廣保護知識產權7月起徵集作品
+          {props.currentNews.title}
+          {props.currentNews.date}
         </Text>
       </View>
       <View style={styles.subTitleContainer}>
