@@ -13,7 +13,7 @@ const Magazine = (props) => {
       />
       <Text style={styles.tileText}>{props.info.title}</Text>
       <View style={styles.tileButtonContainer}>
-        <TouchableOpacity onPress={() => console.log("once")}>
+        <TouchableOpacity onPress={() => props.handleListToBlog(props.info)}>
           <Feather name="book-open" style={styles.iconBook} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log("twice")}>

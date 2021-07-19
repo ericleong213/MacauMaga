@@ -35,7 +35,7 @@ const MagazineScreenList = (props) => {
         </View>
       </View>
       <View style={styles.subScreen}>
-        <MagazineList magazineList={props.magazineList} />
+        <MagazineList magazineList={props.magazineList} handleListToBlog={props.handleListToBlog}/>
       </View>
     </View>
   );
