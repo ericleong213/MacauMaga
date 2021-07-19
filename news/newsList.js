@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, FlatList, Image } from "react-native";
 
-import News from "../components/news";
+import News from "./news";
 import { FontAwesome } from "@expo/vector-icons";
 
 const NewsList = (props) => {

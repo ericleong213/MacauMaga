@@ -1,8 +1,8 @@
 import { select } from "async";
 import React, { useState, useEffect } from "react";
 import { View, Text } from "react-native";
-import NewsScreen from "./Screen/newsScreen";
-import MagazineScreen from "./Screen/magazineScreen";
+import NewsScreen from "./news/newsScreen"
+import MagazineScreen from "./magazine/magazineScreen"
 import VideoScreen from "./Screen/videoScreen";
 
 const SelectScreen = (props) => {

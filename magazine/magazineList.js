@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
-import Magazine from "../components/magazine";
+import Magazine from "./magazine";
 
 const MagazineList = (props) => {
   const [sample] = useState([

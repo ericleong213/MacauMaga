@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Foundation, AntDesign } from "@expo/vector-icons";
-import MagazineList from "../subScreen/magazineList";
+import NewsList from "./newsList";
 
-const MagazineScreenList = (props) => {
+const NewsScreenList = (props) => {
+  const [selected, setSelected] = useState("news");
+  const newsList = {};
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -17,14 +20,14 @@ const MagazineScreenList = (props) => {
           </TouchableOpacity>
         </View>
         <View style={styles.headerBottom}>
+          <TouchableOpacity style={styles.ActiveNavigationTitleContainer}>
+            <Text style={styles.ActiveNavigationTitle}>快訊</Text>
+          </TouchableOpacity>
           <TouchableOpacity
-            onPress={props.setNewsScreen}
+            onPress={props.setMagazineScreen}
             style={styles.navigationTitleContainer}
           >
-            <Text style={styles.navigationTitle}>快訊</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.ActiveNavigationTitleContainer}>
-            <Text style={styles.ActiveNavigationTitle}>雜誌</Text>
+            <Text style={styles.navigationTitle}>雜誌</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={props.setVideoScreen}
@@ -35,13 +38,13 @@ const MagazineScreenList = (props) => {
         </View>
       </View>
       <View style={styles.subScreen}>
-        <MagazineList magazineList={props.magazineList} />
+        <NewsList toDetail={props.toDetail} newsList={props.newsList} />
       </View>
     </View>
   );
 };
 
-export default MagazineScreenList;
+export default NewsScreenList;
 
 const styles = StyleSheet.create({
   container: {

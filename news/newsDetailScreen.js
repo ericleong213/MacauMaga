@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { SimpleLineIcons, MaterialIcons } from "@expo/vector-icons";
-import NewsDetail from "../components/newsDetail";
+import NewsDetail from "./newsDetail";
 
 const NewsDetailScreen = (props) => {
   return (
