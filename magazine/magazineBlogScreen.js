@@ -5,7 +5,7 @@ import MagazineBlogList from "./magazineBloglist";
 import MagazineDetail from "./magazineDetail";
 
 const MagazineBlogScreen = (props) => {
-  const [selected, setSelected] = useState("detail");
+  const [selected, setSelected] = useState("blog");
   const [currentDetail, setCurrentDetail] = useState(
     {
       id: 1,
@@ -35,7 +35,7 @@ const MagazineBlogScreen = (props) => {
       {selected == "detail" && (
         <MagazineDetail
           backToBlog={() => setSelected("blog")}
-          currentDetail={currentDetail}
+          data={currentDetail}
         />
       )}
     </>

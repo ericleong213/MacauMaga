@@ -11,7 +11,7 @@ const MagazineBloglistTile = (props) => {
   return (
     <TouchableHighlight
       style={styles.newsTile}
-      onPress={() => console.log("pressed")}
+      onPress={() => props.handleBlogtoDetail(props.info)}
     >
       <View style={styles.newsTile}>
         <Image

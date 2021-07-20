@@ -10,7 +10,7 @@ const MagazineDetail = (props) => {
           <TouchableOpacity onPress={props.backToBlog}>
             <SimpleLineIcons style={styles.iconArrow} name="arrow-left" />
           </TouchableOpacity>
-          <Text style={styles.title}>睇肉</Text>
+          <Text style={styles.title}>睇2肉</Text>
           <TouchableOpacity>
             <MaterialIcons name="forward-to-inbox" style={styles.iconMail} />
           </TouchableOpacity>
@@ -18,21 +18,22 @@ const MagazineDetail = (props) => {
       </View>
       <View style={styles.subScreen}>
           <View style={styles.titleContainer}>
-            <Text style={styles.titleTxt}>{props.currentDetail.info.title}</Text>
+            <Text style={styles.titleTxt}>{props.data.title}</Text>
           </View>
           <View style={styles.subTitleContainer}>
             <Text style={styles.subTitleTxt}>
-              {props.currentDetail.info.title}
-              {props.currentDetail.info.date}
+              {props.data.title}
+              {props.data.date}
             </Text>
           </View>
           <View style={styles.subTitleContainer}>
             <Image
               style={styles.newsImg}
               source={{
-                uri: "https://picsum.photos/200/200",
+                uri: props.data.imgUrl
               }}
             />
+            <Text style={styles.coontextTxt}>{props.data.context}</Text>
           </View>
       </View>
     </View>

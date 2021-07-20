@@ -15,7 +15,7 @@ const MagazineBlogList = (props) => {
           <TouchableOpacity onPress={props.backToList}>
             <SimpleLineIcons style={styles.iconArrow} name="arrow-left" />
           </TouchableOpacity>
-          <Text style={styles.title}>Hello</Text>
+          <Text style={styles.title}>{props.data.title}</Text>
         </View>
       </View>
       <View style={styles.subScreen}>
@@ -23,7 +23,7 @@ const MagazineBlogList = (props) => {
             data={props.data.blog}
             keyExtractor={(item) => item.id.toString()}
             renderItem={({ item }) => (
-              <MagazineBloglistTile info={item.info}  />
+              <MagazineBloglistTile info={item.info} handleBlogtoDetail={props.handleBlogtoDetail} />
             )}
           />
       </View>
