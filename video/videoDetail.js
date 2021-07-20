@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { SimpleLineIcons, MaterialIcons } from "@expo/vector-icons";
 
-const MagazineDetail = (props) => {
+const VideoDetail = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTop}>
-          <TouchableOpacity onPress={props.backToBlog}>
+          <TouchableOpacity onPress={props.backToList}>
             <SimpleLineIcons style={styles.iconArrow} name="arrow-left" />
           </TouchableOpacity>
           <Text style={styles.title}>類型</Text>
@@ -30,17 +30,16 @@ const MagazineDetail = (props) => {
             <Image
               style={styles.newsImg}
               source={{
-                uri: props.data.imgUrl
+                uri: props.data.videoUrl
               }}
             />
-            <Text style={styles.coontextTxt}>{props.data.context}</Text>
           </View>
       </View>
     </View>
   );
 };
 
-export default MagazineDetail;
+export default VideoDetail;
 
 const styles = StyleSheet.create({
   container: {
@@ -99,7 +98,7 @@ const styles = StyleSheet.create({
   },
   newsImg: {
     marginVertical: 10,
-    width: 330,
-    height: 480,
+    width: 350,
+    height: 280,
   },
 });

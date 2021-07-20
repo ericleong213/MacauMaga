@@ -1,12 +1,11 @@
 import { select } from "async";
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
 import NewsScreen from "./news/newsScreen"
 import MagazineScreen from "./magazine/magazineScreen"
-import VideoScreen from "./Screen/videoScreen";
+import VideoScreen from "./video/videoScreen";
 
 const SelectScreen = (props) => {
-  const [selected, setSelected] = useState("video");
+  const [selected, setSelected] = useState("news");
   return (
     <>
       {selected == "news" && (
