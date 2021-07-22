@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { SimpleLineIcons, MaterialIcons } from "@expo/vector-icons";
 
+import VideoClip from "./VideoClip";
+
 const VideoDetail = (props) => {
+  const sample = "rubbihs"
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -27,12 +30,13 @@ const VideoDetail = (props) => {
             </Text>
           </View>
           <View style={styles.subTitleContainer}>
-            <Image
+            {/* <Image
               style={styles.newsImg}
               source={{
                 uri: props.data.videoUrl
               }}
-            />
+            /> */}
+            <VideoClip videoUrl={props.data.videoUrl}/>
           </View>
       </View>
     </View>
