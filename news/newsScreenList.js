@@ -4,8 +4,6 @@ import { Foundation, AntDesign } from "@expo/vector-icons";
 import NewsList from "./newsList";
 
 const NewsScreenList = (props) => {
-  const [selected, setSelected] = useState("news");
-  const newsList = {};
 
   return (
     <View style={styles.container}>

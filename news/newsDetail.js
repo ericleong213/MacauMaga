@@ -17,7 +17,7 @@ const NewsDetail = (props) => {
         <Image
           style={styles.newsImg}
           source={{
-            uri: "https://picsum.photos/200/200",
+            uri: props.currentNews.imgUrl,
           }}
         />
       </View>

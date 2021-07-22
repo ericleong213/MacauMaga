@@ -24,7 +24,7 @@ const NewsScreen = (props) => {
       info: {
         title: "這apps我弄了幾個月都未弄好",
         date: "2021/06/05",
-        imgUrl: "https://picsum.photos/200/200",
+        imgUrl: "https://cdn.pixabay.com/photo/2021/06/26/06/52/moon-6365467_960_720.jpg",
         context: "Sample 2 2 2 2 2  2222",
       },
     },
