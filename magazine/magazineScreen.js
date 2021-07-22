@@ -21,7 +21,7 @@ const MagazineScreen = (props) => {
           info: {
             title: "今天天氣很差, 但又很好",
             date: "2021/06/01",
-            imgUrl: "https://picsum.photos/200/200",
+            imgUrl: "https://cdn.pixabay.com/photo/2021/07/06/19/26/drops-6392473_960_720.jpg",
             context: "Sample Text 1 Sample Text 1",
           },
         },
