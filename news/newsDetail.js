@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import Publications from "../FeatureSample/pdfViewer";
+
 
 const NewsDetail = (props) => {
   return (
@@ -14,12 +16,7 @@ const NewsDetail = (props) => {
         </Text>
       </View>
       <View style={styles.subTitleContainer}>
-        <Image
-          style={styles.newsImg}
-          source={{
-            uri: props.currentNews.imgUrl,
-          }}
-        />
+        <Publications pdfUrl={props.currentNews.pdfUrl}/>
       </View>
     </View>
   );

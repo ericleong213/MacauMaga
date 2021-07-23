@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { SimpleLineIcons, MaterialIcons } from "@expo/vector-icons";
+import Publications from "../FeatureSample/pdfViewer";
+
 
 const MagazineDetail = (props) => {
   return (
@@ -27,12 +29,7 @@ const MagazineDetail = (props) => {
             </Text>
           </View>
           <View style={styles.subTitleContainer}>
-            <Image
-              style={styles.newsImg}
-              source={{
-                uri: props.data.imgUrl
-              }}
-            />
+            <Publications pdfUrl={props.data.pdfUrl}/>
             <Text style={styles.coontextTxt}>{props.data.context}</Text>
           </View>
       </View>
