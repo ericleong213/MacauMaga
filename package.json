@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "apisauce": "^2.1.1",
     "expo": "~42.0.0",
     "expo-av": "^9.2.3",
     "expo-constants": "^11.0.1",
