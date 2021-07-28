@@ -4,7 +4,6 @@ import { Foundation, AntDesign } from "@expo/vector-icons";
 import NewsList from "./newsList";
 
 const NewsScreenList = (props) => {
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -12,7 +11,7 @@ const NewsScreenList = (props) => {
           <TouchableOpacity>
             <Foundation style={styles.iconList} name="list" />
           </TouchableOpacity>
-          <Text style={styles.title}>澳門雜誌</Text>
+          <Text style={styles.title}>ERIC INFO</Text>
           <TouchableOpacity>
             <AntDesign style={styles.iconSetting} name="setting" />
           </TouchableOpacity>

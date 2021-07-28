@@ -11,7 +11,7 @@ const MagazineScreenList = (props) => {
           <TouchableOpacity>
             <Foundation style={styles.iconList} name="list" />
           </TouchableOpacity>
-          <Text style={styles.title}>澳門雜誌</Text>
+          <Text style={styles.title}>ERIC INFO</Text>
           <TouchableOpacity>
             <AntDesign style={styles.iconSetting} name="setting" />
           </TouchableOpacity>
@@ -35,7 +35,10 @@ const MagazineScreenList = (props) => {
         </View>
       </View>
       <View style={styles.subScreen}>
-        <MagazineList magazineList={props.magazineList} handleListToBlog={props.handleListToBlog}/>
+        <MagazineList
+          magazineList={props.magazineList}
+          handleListToBlog={props.handleListToBlog}
+        />
       </View>
     </View>
   );

@@ -16,7 +16,7 @@ const NewsList = (props) => {
           style={styles.titleImage}
           source={{ uri: "https://picsum.photos/200/200" }}
         />
-        <Text style={styles.topTitle}>澳門雜誌第141期出版</Text>
+        <Text style={styles.topTitle}>第1期快訊</Text>
       </View>
       <View style={styles.newsContainer}>
         <View style={{ display: "flex", flexDirection: "row" }}>
