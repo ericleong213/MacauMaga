@@ -19,3 +19,5 @@ Only React-Native 0.59-0.60+ support, Expo SDK 33-36+
 build configuration:
 
 Android package name to be: com.Eric
+
+privacy policy https://htmlpreview.github.io/?https://github.com/ericleong213/MacauMaga/blob/reorganize-from-magazine-app/privacy%20policy.html
