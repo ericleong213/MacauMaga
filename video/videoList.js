@@ -19,7 +19,7 @@ const VideoList = (props) => {
           <TouchableOpacity>
             <Foundation style={styles.iconList} name="list" />
           </TouchableOpacity>
-          <Text style={styles.title}>ERIC INFO</Text>
+          <Text style={styles.title}>ERIC WorkOut</Text>
           <TouchableOpacity>
             <AntDesign style={styles.iconSetting} name="setting" />
           </TouchableOpacity>
