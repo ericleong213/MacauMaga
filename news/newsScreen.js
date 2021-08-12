@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import NewsScreenList from "./newsScreenList";
 import NewsDetailScreen from "./newsDetailScreen";
 import apiClient from "../api/client";
+import dataRef from "../api/firebaseDataBase";
 
 const NewsScreen = (props) => {
   const [selected, setSelected] = useState("list");
