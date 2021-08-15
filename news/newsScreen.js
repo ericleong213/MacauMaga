@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import NewsScreenList from "./newsScreenList";
 import NewsDetailScreen from "./newsDetailScreen";
-import apiClient from "../api/client";
 import dataRef from "../api/firebaseDataBase";
 
 const NewsScreen = (props) => {
@@ -19,7 +18,20 @@ const NewsScreen = (props) => {
   }, []);
 
   const loadNews = async () => {
-    await apiClient.get().then((response) => setNewsList(response.data[0]));
+    // await apiClient.get().then((response) => setNewsList(response.data[0]));
+    await dataRef
+      .ref()
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setNewsList(snapshot.val()[0]);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (

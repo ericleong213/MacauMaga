@@ -15,8 +15,13 @@ const firebaseConfig = {
   appId: "1:270925623180:web:4e12b400d4dd5f76b4f0a9",
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Initialize Firebase, determine apps is initialized or not, and choose the right method
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
+}
 
 //read Data ends
 

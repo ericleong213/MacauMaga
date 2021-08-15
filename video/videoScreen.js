@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import VideoList from "./videoList";
 import VideoDetail from "./videoDetail";
 import apiClient from "../api/client";
+import dataRef from "../api/firebaseDataBase";
 
 const VideoScreen = (props) => {
   const [selected, setSelected] = useState("list");
@@ -24,7 +25,20 @@ const VideoScreen = (props) => {
   }, []);
 
   const loadVideo = async () => {
-    await apiClient.get().then((response) => setVideoList(response.data[2]));
+    // await apiClient.get().then((response) => setVideoList(response.data[2]));
+    await dataRef
+      .ref()
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          setVideoList(snapshot.val()[2]);
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
